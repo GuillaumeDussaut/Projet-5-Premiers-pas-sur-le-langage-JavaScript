@@ -219,33 +219,27 @@ header {
 	display: none;
 }
 
-.banner-img .active {
+.active {
 	display: block;
 }
-
 
 /* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
 /* Gestion des fleches du carrousel */
 #banner .arrow {
+	cursor: pointer;
 	position: absolute;
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
+	font-size: 50px;
+	background: transparent;
+	border: none;
+	color: white;
 }
 
 #banner .arrow_left {
-	cursor: pointer;
-	border: none;
-	background: transparent;
-	font-size: 40px;
 	left: 10px;
+
 }
 
 #banner .arrow_right {
-	cursor: pointer;
-	border: none;
-	background: transparent;
-	font-size: 40px;
 	right: 10px;
 }
 
