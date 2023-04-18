@@ -217,6 +217,7 @@ header {
 	object-fit: cover;
 	object-position: center;
 	display: none;
+
 }
 
 .active {
@@ -264,6 +265,7 @@ header {
 
 .dot_selected {
 	background-color: #fff;
+	transform: scale(1.35);
 }
 
 /* Fin du code CSS pour le carousel */
