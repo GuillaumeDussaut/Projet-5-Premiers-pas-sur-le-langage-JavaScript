@@ -2,6 +2,7 @@ const slides = document.querySelectorAll('.banner-img');
 const dots = document.querySelectorAll('.dot');
 const precedent = document.querySelector('.arrow_left');
 const suivant = document.querySelector('.arrow_right');
+const txtImg = document.querySelectorAll('.tagline p')
 const nbSlide = slides.length;
 let count = 0;
 
@@ -10,6 +11,9 @@ let count = 0;
 function slideSuivante(){
 	slides[count].classList.remove('active');
 	dots[count].classList.remove('dot_selected');
+	txtImg[count].classList.remove('active');
+	txtImg[count].classList.add('none')
+
 
 	if(count < nbSlide - 1){
 		count++;
@@ -19,6 +23,11 @@ function slideSuivante(){
 
 	slides[count].classList.add('active')
 	dots[count].classList.add('dot_selected')
+	txtImg[count].classList.add('active')
+	txtImg[count].classList.remove('none')
+	
+
+
 }
 suivant.addEventListener('click', slideSuivante)
 
@@ -27,6 +36,8 @@ suivant.addEventListener('click', slideSuivante)
 function slidePrecedente(){
 	slides[count].classList.remove('active');
 	dots[count].classList.remove('dot_selected');
+	txtImg[count].classList.remove('active');
+	txtImg[count].classList.add('none')
 
 	if(count > 0){
 		count--;
@@ -36,6 +47,8 @@ function slidePrecedente(){
 	
 	slides[count].classList.add('active')
 	dots[count].classList.add('dot_selected')
+	txtImg[count].classList.add('active')
+	txtImg[count].classList.remove('none')
 }
 precedent.addEventListener('click', slidePrecedente)
 
