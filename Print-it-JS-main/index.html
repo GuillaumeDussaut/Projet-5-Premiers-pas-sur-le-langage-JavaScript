@@ -24,64 +24,32 @@
       <a class="btn devis" href="mailto:contact@print-it.tld">Devis</a>
     </header>
     <main>
-      <!-- zone slider -->
-
-      <!-- slider -->
+      <!-- debut slider -->
       <div id="banner">
         <!-- fleches -->
-        <button class="arrow arrow_left">
-          <img src="./assets/images/arrow_left.png" alt="arrow left" />
-        </button>
-        <button class="arrow arrow_right">
-          <img src="./assets/images/arrow_right.png" alt="arrow right" />
-        </button>
-        <!-- img -->
-
+        <div class="arrow">
+          <!-- fleche gauche -->
+          <div class="arrow_left">
+            <img src="./assets/images/arrow_left.png" alt="arrow left" />
+          </div>
+          <!-- fleche droite -->
+          <div class="arrow_right">
+            <img src="./assets/images/arrow_right.png" alt="arrow right" />
+          </div>
+        </div>
+        <!-- images -->
         <img
-          class="banner-img active"
+          class="banner-img"
+          id="slider"
           src="./assets/images/slideshow/slide1.jpg"
           alt="Banner Print-it"
         />
-        <img
-          class="banner-img"
-          src="./assets/images/slideshow/slide2.jpg"
-          alt="Banner Print-it"
-        />
-        <img
-          class="banner-img"
-          src="./assets/images/slideshow/slide3.jpg"
-          alt="Banner Print-it"
-        />
-        <img
-          class="banner-img"
-          src="./assets/images/slideshow/slide4.png"
-          alt="Banner Print-it"
-        />
-        <div class="test"></div>
-        <!-- txt images -->
-        <div class="tagline">
-          <p class="active">
-            Impressions tous formats <span>en boutique et en ligne</span>
-          </p>
-          <p class="none">
-            Tirages haute définition grand format
-            <span>pour vos bureaux et events</span>
-          </p>
-          <p class="none">
-            Grand choix de couleurs <span>de CMJN aux pantones</span>
-          </p>
-          <p class="none">
-            Autocollants <span>avec découpe laser sur mesure</span>
-          </p>
-        </div>
-
-        <!-- dots -->
-        <div class="dots">
-          <span class="dot dot_selected"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
+        <!-- texte -->
+        <p class="tagLine">
+          Impressions tous formats <span>en boutique et en ligne</span>
+        </p>
+        <!-- les dots -->
+        <div class="dots"></div>
       </div>
       <!-- fin slider -->
       <section id="about-us" class="container">

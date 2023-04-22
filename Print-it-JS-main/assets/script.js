@@ -1,56 +1,82 @@
-const slides = document.querySelectorAll('.banner-img');
-const dots = document.querySelectorAll('.dot');
-const precedent = document.querySelector('.arrow_left');
-const suivant = document.querySelector('.arrow_right');
-const txtImg = document.querySelectorAll('.tagline p')
-const nbSlide = slides.length;
-let count = 0;
+const slides = [
+	{
+	  "image":"slide1.jpg",
+	  "tagLine":"Impressions tous formats <span>en boutique et en ligne</span>"
+	},
+	{
+	  "image":"slide2.jpg",
+	  "tagLine":"Tirages haute définition grand format <span>pour vos bureaux et events</span>"
+	},
+	{
+	  "image":"slide3.jpg",
+	  "tagLine":"Grand choix de couleurs <span>de CMJN aux pantones</span>"
+	},
+	{
+	  "image":"slide4.png",
+	  "tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
+	} ];
+const nbSlides = slides.length;
+let numero = 0;
+const suivant = document.querySelector(".arrow_right");
+const precedent = document.querySelector(".arrow_left");
+const slider = document.getElementById('slider');
+const dotsContainer = document.querySelector('.dots');
+const txtImg = document.querySelector('.tagLine');
 
-// fleche droite (suivant)
-
-function slideSuivante(){
-	slides[count].classList.remove('active');
-	dots[count].classList.remove('dot_selected');
-	txtImg[count].classList.remove('active');
-	txtImg[count].classList.add('none')
-
-
-	if(count < nbSlide - 1){
-		count++;
-	} else {
-		count = 0;
+// partie dots creation
+for (let i = 0; i < nbSlides; i++) {
+	const dot = document.createElement('span');
+	dot.classList.add('dot');
+  
+// Ajouter la classe .dot_selected si c'est la première slide
+	if (i == 0) {
+	  dot.classList.add('dot_selected');
 	}
-
-	slides[count].classList.add('active')
-	dots[count].classList.add('dot_selected')
-	txtImg[count].classList.add('active')
-	txtImg[count].classList.remove('none')
-	
-
-
+  
+	dot.addEventListener('click', () => {
+	  numero = i;
+	  showSlide(numero);
+	});
+  
+	dotsContainer.appendChild(dot);
+} 
+// src img du slide
+function showSlide(num) {
+	slider.src = './assets/images/slideshow/' + slides[num].image;
+  
+// Mettre à jour la classe `dot_selected` en fonction de la slide affichée
+	const dots = dotsContainer.querySelectorAll('.dot');
+	dots.forEach((dot, i) => {
+	  if (i === num) {
+		dot.classList.add('dot_selected');
+	  } else {
+		dot.classList.remove('dot_selected');
+	  }
+});
+	const texteImage = txtImg.innerHTML = slides[num].tagLine;
 }
-suivant.addEventListener('click', slideSuivante)
-
-// fleche gauche (precedent)
-
-function slidePrecedente(){
-	slides[count].classList.remove('active');
-	dots[count].classList.remove('dot_selected');
-	txtImg[count].classList.remove('active');
-	txtImg[count].classList.add('none')
-
-	if(count > 0){
-		count--;
-	} else {
-		count = nbSlide - 1;
+ 
+// Fleche droite
+function slideSuivante() {
+	numero++;
+	if (numero > nbSlides - 1) {
+	  numero = 0;
 	}
-	
-	slides[count].classList.add('active')
-	dots[count].classList.add('dot_selected')
-	txtImg[count].classList.add('active')
-	txtImg[count].classList.remove('none')
+	showSlide(numero);
 }
-precedent.addEventListener('click', slidePrecedente)
+  
+suivant.addEventListener('click', slideSuivante);
+  
+// Fleche gauche
+function slidePrecedente() {
+	numero--;
+	if (numero < 0) {
+	  numero = nbSlides - 1;
+	}
+	showSlide(numero);
+}
+  
+precedent.addEventListener('click', slidePrecedente);
 
-// dots 
+
 
