@@ -1,3 +1,0 @@
-Repo Github:
-
-- https://github.com/GuillaumeDussaut/Projet-5-Premiers-pas-sur-le-langage-JavaScript
